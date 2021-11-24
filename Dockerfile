@@ -20,7 +20,7 @@ RUN apt-get install -y r-base r-base-core \
 RUN Rscript -e "install.packages(c('data.table', 'R.utils', 'devtools'))"
 
 # ManQQ
-RUN Rscript -e "library(devtools); install_github('hmgu-itg/man_qq_annotate')"
+RUN echo hi && Rscript -e "library(devtools); install_github('hmgu-itg/man_qq_annotate')"
 
 # Python 3.8.10
 RUN apt-get update
