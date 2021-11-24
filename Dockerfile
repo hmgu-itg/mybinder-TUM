@@ -59,7 +59,8 @@ USER ${NB_USER}
 
 
 # Data
-WORKDIR $HOME
+RUN mkdir ${HOME}/data
+WORKDIR ${HOME}/data
 RUN wget https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000337/ScoringFiles/PGS000337.txt.gz
 RUN wget https://www.dropbox.com/s/o71gg622t2vnjqu/MEP1B.gilly.prs.txt?dl=1 -O MEP1B.gilly.prs.txt
 RUN wget -O PRS.course.forscore.tar.gz https://www.dropbox.com/s/civmjfv89ou72cc/PRS.course.forscore.tar.gz?dl=1 && tar -xvzf PRS.course.forscore.tar.gz
@@ -67,3 +68,6 @@ RUN wget -O PRS.course.geno.tar.gz https://www.dropbox.com/s/oml7xw36yse7lld/PRS
 RUN wget -O CAD.phenotype https://www.dropbox.com/s/xs7wsgij95w2uau/CAD.phenotype?dl=1
 RUN wget -O MEP1B.phenotype https://www.dropbox.com/s/5rmhjmv0d6oqxpr/MEP1B.phenotype?dl=1
 RUN wget -O PCs.eigenvec https://www.dropbox.com/s/5phdnh9st0p5dah/PCs.eigenvec?dl=1
+
+
+WORKDIR $HOME
