@@ -40,6 +40,7 @@ ENV PATH="/usr/local/bin:${PATH}"
 RUN python3 -m pip install --no-cache-dir notebook jupyterlab
 
 RUN Rscript -e "install.packages('IRkernel', repos='https://cran.rstudio.com'); IRkernel::installspec(name = 'ir41', displayname = 'R 4.1', user = FALSE)" # This one is mine
+RUN Rscript -e "install.packages('tidyverse')"
 
 ARG NB_USER=user
 ARG NB_UID=1000
@@ -68,6 +69,5 @@ RUN wget -O PRS.course.geno.tar.gz https://www.dropbox.com/s/oml7xw36yse7lld/PRS
 RUN wget -O CAD.phenotype https://www.dropbox.com/s/xs7wsgij95w2uau/CAD.phenotype?dl=1
 RUN wget -O MEP1B.phenotype https://www.dropbox.com/s/5rmhjmv0d6oqxpr/MEP1B.phenotype?dl=1
 RUN wget -O PCs.eigenvec https://www.dropbox.com/s/5phdnh9st0p5dah/PCs.eigenvec?dl=1
-RUN Rscript -e "install.packages('tidyverse')"
 
 WORKDIR $HOME
