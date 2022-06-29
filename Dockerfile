@@ -30,7 +30,7 @@ RUN python3 -m pip install matplotlib numpy pandas seaborn requests CrossMap rpy
 # Plink
 RUN apt-get install -y wget
 RUN wget https://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20210606.zip && unzip plink_linux_x86_64_20210606.zip && rm prettify toy.* LICENSE && mv plink /usr/local/bin/plink
-RUN wget https://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20211011.zip && unzip plink2_linux_avx2_20211011.zip && mv plink2 /usr/local/bin/plink2
+RUN wget https://s3.amazonaws.com/plink2-assets/plink2_linux_avx2_20220603.zip && unzip plink2_linux_avx2_20220603.zip && mv plink2 /usr/local/bin/plink2
 RUN chmod -R 755 /usr/local/bin
 
 ENV PATH="/usr/local/bin:${PATH}"
